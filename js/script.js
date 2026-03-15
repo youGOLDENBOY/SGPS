@@ -157,13 +157,16 @@ document.querySelectorAll('.bar-fill').forEach(function(barra) {
   barra.style.width = '0%'; // empieza en 0
   barObserver.observe(barra);
 });
+
+
 /* ════════════════════════════════════════
    MÚSICA DE FONDO
+   Controla el botón flotante ▶ / ■
    ════════════════════════════════════════ */
 function toggleMusica() {
-  const audio  = document.getElementById('musica');
-  const icono  = document.getElementById('icono-musica');
-  const boton  = document.getElementById('btn-musica');
+  const audio = document.getElementById('musica');
+  const icono = document.getElementById('icono-musica');
+  const boton = document.getElementById('btn-musica');
 
   if (audio.paused) {
     audio.play();
@@ -175,19 +178,3 @@ function toggleMusica() {
     boton.classList.remove('sonando');
   }
 }
-```
-
----
-
-**Estructura de carpetas actualizada:**
-```
-proyecto-vida/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── fotos/
-│   └── (tus fotos)
-└── musica/
-    └── cancion.mp3   ← pon tu mp3 aquí con ese nombre
