@@ -354,7 +354,17 @@
     <span>© 2025 Samil Geraldo Pérez Santana</span>
     <span>Hecho con código propio · República Dominicana 🇩🇴</span>
   </footer>
+<!-- MÚSICA DE FONDO -->
+<!-- Pon tu archivo mp3 en la carpeta: musica/cancion.mp3 -->
+<audio id="musica" loop>
+  <source src="musica/cancion.mp3" type="audio/mpeg">
+</audio>
 
+<!-- Botón flotante -->
+<button id="btn-musica" onclick="toggleMusica()" title="Reproducir / Pausar música">
+  <span id="icono-musica">▶</span>
+</button>
+  
   <!-- Tu archivo de JavaScript -->
   <script src="js/script.js"></script>
 
