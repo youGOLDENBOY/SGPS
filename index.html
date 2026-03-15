@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samil Geraldo — Proyecto de Vida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Tu hoja de estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       LIGHTBOX (visor de fotos)
+       ═══════════════════════════════ -->
+  <div id="lightbox" onclick="closeLB(event)">
+    <button id="lb-close" onclick="closeLightbox()">✕</button>
+    <button id="lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="" />
+    <button id="lb-next" onclick="lbNav(1)">›</button>
+    <span id="lb-caption"></span>
+  </div>
+
+  <!-- ═══════════════════════════════
+       NAVEGACIÓN
+       ═══════════════════════════════ -->
+  <nav>
+    <div class="nav-logo">SGP</div>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#logros">Logros</a></li>
+      <li><a href="#metas">Metas</a></li>
+      <li><a href="#mensaje">Mensaje</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════
+       HERO (pantalla de inicio)
+       ═══════════════════════════════ -->
+  <div id="hero">
+    <div class="hero-text reveal">
+      <p class="hero-eyebrow">Proyecto de vida · 2025</p>
+      <h1>Samil<br>Geraldo<br><span>Pérez Santana</span></h1>
+      <p class="hero-desc">
+        Futbolista. Dibujante. Tecnólogo. Futuro especialista en ciberseguridad.
+        17 años construyendo el camino que solo veía desde una pantalla.
+      </p>
+      <a href="#sobre-mi" class="hero-cta">Conoce mi historia →</a>
+      <div class="hero-tags">
+        <span class="tag">ITLA · Ciberseguridad</span>
+        <span class="tag">Hacker ético</span>
+        <span class="tag">Diseño digital</span>
+        <span class="tag">Futsala · Portero</span>
+        <span class="tag">Rep. Dominicana 🇩🇴</span>
+      </div>
+    </div>
+
+    <!--
+      FOTO PRINCIPAL
+      → Guarda tu foto como: fotos/foto-perfil.jpg
+    -->
+    <div class="hero-photo reveal" onclick="openLightbox('fotos/foto-perfil.jpg','Samil Geraldo · 2025')">
+      <img
+        src="fotos/foto-perfil.jpg"
+        alt="Samil Geraldo"
+        onload="this.style.display='block'; this.closest('.hero-photo').querySelector('.photo-placeholder').style.display='none';"
+        onerror="this.style.display='none';"
+      />
+      <div class="photo-placeholder">
+        <div class="initials">SGP</div>
+        <span>Sube tu foto como<br><code>fotos/foto-perfil.jpg</code></span>
+      </div>
+      <span class="photo-label">República Dominicana · 2008</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECCIÓN 01 — SOBRE MÍ
+       ═══════════════════════════════ -->
+  <section id="sobre-mi">
+    <p class="sec-label reveal">01 — Historia</p>
+    <h2 class="reveal">Crecí viéndolo.<br>Ahora lo vivo.</h2>
+
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Nací el <strong>8 de diciembre de 2008</strong>. Crecí mirando YouTube — los goles, los diseños, los juegos, los tutoriales. Todo lo que quería ser, primero lo vi en una pantalla.</p>
+        <p>Hubo una época donde me perdí en el camino. Era inteligente, pero no lo demostraba. Eso cambió cuando decidí cambiar. <strong>Tres años de disciplina</strong> reescribieron mi historia por completo.</p>
+        <p>Entré a <strong>Naciones Unidas y Debate</strong> — la mejor decisión de mi vida escolar. Ahí afilé mi mente, conocí personas increíbles, y encontré a <strong>mi Rayo de Luna</strong>.</p>
+        <p>Hoy, a 2 meses de graduarme, tengo mi tableta gráfica, mi PC, y el camino claro. Ya no lo veo por pantalla — <strong>lo construyo.</strong></p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-row"><span class="stat-val">17</span><span class="stat-lbl">años con el camino claro</span></div>
+        <div class="stat-row"><span class="stat-val">3</span><span class="stat-lbl">pilares que me definen</span></div>
+        <div class="stat-row"><span class="stat-val">4</span><span class="stat-lbl">años para ser profesional</span></div>
+        <div class="stat-row"><span class="stat-val">24</span><span class="stat-lbl">edad meta para la autonomía</span></div>
+      </div>
+    </div>
+
+    <!--
+      FOTOS DE NIÑO
+      → fotos/infancia-1.jpg  fotos/infancia-2.jpg  fotos/infancia-3.jpg
+    -->
+    <div class="foto-strip reveal">
+      <div class="foto-thumb" onclick="openLightboxGroup('infancia', 0)">
+        <img src="fotos/infancia-1.jpg" alt="De pequeño" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">De pequeño</span>
+      </div>
+      <div class="foto-thumb" onclick="openLightboxGroup('infancia', 1)">
+        <img src="fotos/infancia-2.jpg" alt="Creciendo" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Creciendo</span>
+      </div>
+      <div class="foto-thumb" onclick="openLightboxGroup('infancia', 2)">
+        <img src="fotos/infancia-3.jpg" alt="Mis raíces" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Mis raíces</span>
+      </div>
+    </div>
+
+    <div class="pilares reveal">
+      <div class="pilar">
+        <div class="pilar-num">01</div>
+        <h3>⚽ Fútbol</h3>
+        <p>Portero. Selección regional. Barahona 2023. El deporte que me enseñó a no rendirme bajo presión.</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">02</div>
+        <h3>✏️ Dibujo</h3>
+        <p>Tableta gráfica. Diseño de portadas, logos y banners. El arte como lenguaje personal.</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">03</div>
+        <h3>💻 Tecnología</h3>
+        <p>Edición, YouTube, streaming. Y ahora: ciberseguridad. La tecnología siempre fue mi mundo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SECCIÓN 02 — HABILIDADES
+       ═══════════════════════════════ -->
+  <section id="habilidades">
+    <p class="sec-label reveal">02 — Habilidades</p>
+    <h2 class="reveal">Lo que sé hacer<br>hoy.</h2>
+
+    <div class="skills-grid reveal">
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">Dibujo e ilustración</span><span class="skill-pct">85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">Diseño gráfico (logos, banners)</span><span class="skill-pct">80%</span></div>
+        <div class="bar-bg"><div class="bar-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">Edición de video</span><span class="skill-pct">75%</span></div>
+        <div class="bar-bg"><div class="bar-fill teal" data-width="75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">YouTube / Streaming / Contenido</span><span class="skill-pct">70%</span></div>
+        <div class="bar-bg"><div class="bar-fill teal" data-width="70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">Ciberseguridad (en formación)</span><span class="skill-pct">35%</span></div>
+        <div class="bar-bg"><div class="bar-fill" data-width="35%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-top"><span class="skill-name-text">Desarrollo web / Código</span><span class="skill-pct">30%</span></div>
+        <div class="bar-bg"><div class="bar-fill" data-width="30%"></div></div>
+      </div>
+    </div>
+
+    <!--
+      FOTOS DE DIBUJOS Y PC
+      → fotos/dibujo-1.jpg  fotos/dibujo-2.jpg  fotos/dibujo-3.jpg  fotos/foto-pc.jpg
+    -->
+    <p class="sec-label reveal" style="margin-bottom: 1rem;">Mi trabajo</p>
+    <div class="fotos-grid reveal">
+      <div class="foto-thumb" onclick="openLightboxGroup('arte', 0)">
+        <img src="fotos/dibujo-1.jpg" alt="Ilustración" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Ilustración</span>
+      </div>
+      <div class="foto-thumb" onclick="openLightboxGroup('arte', 1)">
+        <img src="fotos/dibujo-2.jpg" alt="Diseño" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Diseño</span>
+      </div>
+      <div class="foto-thumb" onclick="openLightboxGroup('arte', 2)">
+        <img src="fotos/dibujo-3.jpg" alt="Arte digital" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Arte digital</span>
+      </div>
+      <div class="foto-thumb" onclick="openLightboxGroup('arte', 3)">
+        <img src="fotos/foto-pc.jpg" alt="Mi setup" onerror="this.closest('.foto-thumb').style.display='none'">
+        <span class="thumb-label">Mi setup</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SECCIÓN 03 — LOGROS
+       ═══════════════════════════════ -->
+  <section id="logros">
+    <p class="sec-label reveal">03 — Logros</p>
+    <h2 class="reveal">Lo que ya<br>conseguí.</h2>
+
+    <!-- Logro: Futsala -->
+    <div class="logro-card reveal">
+      <div class="logro-icon">🥅</div>
+      <div class="logro-body">
+        <h3>Selección Regional de Futsala</h3>
+        <p>Mejor portero de toda la región. Participé en el Torneo Nacional Barahona 2023 enfrentando jugadores que hoy compiten en Europa. Lo que solo veía en series, lo viví.</p>
+        <!--
+          FOTOS DEL TORNEO
+          → fotos/torneo-1.jpg  fotos/torneo-2.jpg  fotos/torneo-3.jpg
+        -->
+        <div class="logro-fotos">
+          <div class="foto-thumb" onclick="openLightboxGroup('torneo', 0)">
+            <img src="fotos/torneo-1.jpg" alt="Barahona 2023" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">Barahona 2023</span>
+          </div>
+          <div class="foto-thumb" onclick="openLightboxGroup('torneo', 1)">
+            <img src="fotos/torneo-2.jpg" alt="En el arco" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">En el arco</span>
+          </div>
+          <div class="foto-thumb" onclick="openLightboxGroup('torneo', 2)">
+            <img src="fotos/torneo-3.jpg" alt="El equipo" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">El equipo</span>
+          </div>
+        </div>
+      </div>
+      <span class="logro-year">2023</span>
+    </div>
+
+    <!-- Logro: Naciones Unidas -->
+    <div class="logro-card reveal">
+      <div class="logro-icon">🎙️</div>
+      <div class="logro-body">
+        <h3>Naciones Unidas y Debate Escolar</h3>
+        <p>La decisión que cambió mi mentalidad. Desarrollé pensamiento crítico, oratoria y conexiones reales con personas que me impulsan a ser mejor.</p>
+        <!--
+          FOTOS DE NACIONES UNIDAS
+          → fotos/naciones-1.jpg  fotos/naciones-2.jpg
+        -->
+        <div class="logro-fotos">
+          <div class="foto-thumb" onclick="openLightboxGroup('naciones', 0)">
+            <img src="fotos/naciones-1.jpg" alt="Naciones Unidas" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">Naciones Unidas</span>
+          </div>
+          <div class="foto-thumb" onclick="openLightboxGroup('naciones', 1)">
+            <img src="fotos/naciones-2.jpg" alt="Debate" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">Debate</span>
+          </div>
+          <div class="foto-thumb" onclick="openLightboxGroup('naciones', 2)">
+            <img src="fotos/naciones-3.jpg" alt="Naciones Unidas 3" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">Naciones Unidas</span>
+          </div>
+          <div class="foto-thumb" onclick="openLightboxGroup('naciones', 3)">
+            <img src="fotos/naciones-4.jpg" alt="Naciones Unidas 4" onerror="this.closest('.foto-thumb').style.display='none'">
+            <span class="thumb-label">Naciones Unidas</span>
+          </div>
+        </div>
+      </div>
+      <span class="logro-year">2022–2025</span>
+    </div>
+
+    <!-- Logro: Tableta -->
+    <div class="logro-card reveal">
+      <div class="logro-icon">🎨</div>
+      <div class="logro-body">
+        <h3>Tableta gráfica propia</h3>
+        <p>Lo que solo veía en tutoriales de YouTube, hoy es una herramienta real en mis manos. Diseño y dibujo a nivel profesional desde mi cuarto.</p>
+      </div>
+      <span class="logro-year">2024</span>
+    </div>
+
+    <!-- Logro: Esta web -->
+    <div class="logro-card reveal">
+      <div class="logro-icon">💻</div>
+      <div class="logro-body">
+        <h3>Este proyecto — hecho desde cero</h3>
+        <p>Esta página web es la prueba. Código por código, construida por mí. El primer paso concreto hacia la ciberseguridad y hacia la versión profesional de mí mismo.</p>
+      </div>
+      <span class="logro-year">2025</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SECCIÓN 04 — METAS / TIMELINE
+       ═══════════════════════════════ -->
+  <section id="metas">
+    <p class="sec-label reveal">04 — Metas</p>
+    <h2 class="reveal">La ruta que<br>voy a seguir.</h2>
+    <div class="timeline reveal">
+      <div class="t-item done">
+        <p class="t-year">2023</p>
+        <p class="t-title">Selección Nacional · Barahona</p>
+        <p class="t-desc">Mejor portero de la región. Competí al más alto nivel y di la talla.</p>
+      </div>
+      <div class="t-item active">
+        <p class="t-year">2025 — Ahora mismo</p>
+        <p class="t-title">Graduación de bachillerato</p>
+        <p class="t-desc">A 2 meses de cerrar este capítulo. Tres años de crecimiento real, debate, y claridad de propósito.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-year">2025 – 2026</p>
+        <p class="t-title">Ingreso al ITLA</p>
+        <p class="t-desc">Instituto Tecnológico de las Américas. Inicio de la carrera en Ciberseguridad.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-year">2027 – 2028</p>
+        <p class="t-title">Maestría en Ciberseguridad</p>
+        <p class="t-desc">Especialización avanzada. Hacker ético certificado. Consultor para empresas extranjeras.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-year">2029 · 21 años</p>
+        <p class="t-title">Profesional activo</p>
+        <p class="t-desc">Trabajando en remoto para compañías internacionales. Protegiendo datos. Viviendo del conocimiento.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-year">Antes de los 24</p>
+        <p class="t-title">Autonomía total</p>
+        <p class="t-desc">Casa propia. Movilidad. Independencia económica. El resto lo dejo en manos de Dios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SECCIÓN 05 — MENSAJE FINAL
+       ═══════════════════════════════ -->
+  <section id="mensaje">
+    <div class="mensaje-inner">
+      <p class="sec-label reveal">05 — Para mis amigos</p>
+      <p class="big-quote reveal">
+        El futuro no llega —<br><em>tú lo construyes</em> todos los días.
+      </p>
+      <p class="mensaje-body reveal">
+        A todos los que crecimos viendo a otros vivir lo que queríamos: ya es nuestro turno.
+        No hay excusa que valga más que tu sueño. Cada decisión cuenta — la escuela que eliges,
+        la carrera que estudias, el círculo de personas que te rodea. Yo también dudé,
+        también estuve de vago, también pensé que no era para mí.
+        <br><br>
+        Pero un día decidí. Y ese día lo cambió todo.
+        <br><br>
+        No sé dónde nos lleve el camino, pero sé que si nos preparamos con fe, disciplina
+        y pasión real — nadie nos va a poder quitar lo que construyamos.
+        <strong style="color: #f0ede8;">El tiempo es ahora. Úsalo.</strong>
+      </p>
+      <p class="firma reveal">— Samil Geraldo Pérez Santana · 2025</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Samil Geraldo Pérez Santana</span>
+    <span>Hecho con código propio · República Dominicana 🇩🇴</span>
+  </footer>
+
+  <!-- Tu archivo de JavaScript -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
